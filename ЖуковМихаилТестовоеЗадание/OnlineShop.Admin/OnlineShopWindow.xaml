@@ -1,0 +1,67 @@
+﻿<Window x:Class="OnlineShop.Admin.OnlineShopWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnlineShop.Admin"
+        xmlns:MyAdmin ="clr-namespace:OnlineShop.Admin.ViewModels"
+        mc:Ignorable="d"
+        Title="Администратор магазина" Height="600" Width="900">
+    <Window.Resources>
+        <MyAdmin:AdminViewModel x:Key="adminViewModel"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="500*"/>
+            <RowDefinition Height="34"/>
+        </Grid.RowDefinitions>
+        <ToolBar x:Name="osToolBar">
+            <MenuItem Header="Загрузить данные" Command="{Binding OpenWindowLoadDataCommand, Source={StaticResource adminViewModel}}"/>
+            <MenuItem Header="Ассортимент"/>
+            <MenuItem Header="Прайсы"/>
+            <MenuItem Header="Настройки"/>
+        </ToolBar>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="85*"/>
+                <ColumnDefinition Width="138*"/>
+            </Grid.ColumnDefinitions>
+            <ListBox x:Name="listBox" ItemsSource="{Binding Brends, Source={StaticResource adminViewModel}}"
+                     DisplayMemberPath="BrendName"
+                      SelectedItem="{Binding SelectedBrend, Source={StaticResource ResourceKey=adminViewModel}}" />
+            <GridSplitter x:Name="gridSplitter" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="0,5,0,5"  Width="10" Background="#FFD6D1D1" />
+            <ListView x:Name="listView1" Margin="10,0,0,0" Grid.Column="1" ItemsSource="{Binding AssortmentsFind, Mode=TwoWay, Source={StaticResource adminViewModel}}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn  Width="Auto">
+                            <GridViewColumnHeader  Content="Артикл" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock Text="{Binding Article}" />
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn  Width="Auto">
+                            <GridViewColumnHeader  Content="Наименование" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock Text="{Binding Name}" />
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+           
+        </Grid>
+        <StatusBar x:Name="osStatusBar" Grid.Row="2"  />
+
+
+
+    </Grid>
+</Window>

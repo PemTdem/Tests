@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="OnlineShop.Admin.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ApiKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">?key=</Value>
+    </Setting>
+    <Setting Name="Host" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://api.berg.ru</Value>
+    </Setting>
+    <Setting Name="ReferencBrands" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/references/brands</Value>
+    </Setting>
+    <Setting Name="ReferencActivAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/references/shipment_address/active</Value>
+    </Setting>
+    <Setting Name="OrderGetStock" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/ordering/get_stock</Value>
+    </Setting>
+    <Setting Name="OrderPlaceOrder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/ordering/place_order</Value>
+    </Setting>
+    <Setting Name="ReferencStates" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/references/states</Value>
+    </Setting>
+    <Setting Name="OrderStatesActive" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/ordering/states/active</Value>
+    </Setting>
+    <Setting Name="OrderStates" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/ordering/states</Value>
+    </Setting>
+    <Setting Name="CurrentPricePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

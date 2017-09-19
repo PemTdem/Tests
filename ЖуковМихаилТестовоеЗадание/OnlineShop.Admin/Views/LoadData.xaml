@@ -1,0 +1,21 @@
+﻿<Window x:Class="OnlineShop.Admin.Views.LoadData"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnlineShop.Admin.Views"
+        xmlns:MyLoad="clr-namespace:OnlineShop.Admin.ViewModels"
+        mc:Ignorable="d"
+        Title="Загрузка данных" Height="300" Width="320">
+    <Window.Resources>
+        <MyLoad:LoadDataViewModel x:Key="loadDataViewModel"/>
+    </Window.Resources>
+    <Grid>
+        <TextBox x:Name="tbLoadFile" HorizontalAlignment="Left" Margin="10,32,0,0"  Text="BERG_PEM_20170622_124651.csv" VerticalAlignment="Top" TextWrapping="NoWrap" Width="235"/>
+        <Button x:Name="button" Content="|||" HorizontalAlignment="Left" ToolTip="Выбор файла" Margin="250,32,0,0" VerticalAlignment="Top" Width="25" Height="18"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="10,15,0,0" TextWrapping="Wrap" Text="Нужно просто выбрать файл и нажать Загрузить." VerticalAlignment="Top" Width="272"/>
+        <Button x:Name="btnLoadData" Content="Загрузить" HorizontalAlignment="Left" Margin="95,115,0,0" VerticalAlignment="Top" Width="75" Command="{Binding LoadDataCommand, Source={StaticResource loadDataViewModel}}" CommandParameter="{Binding Text, ElementName=tbLoadFile}"/>
+        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="10,180,0,0" TextWrapping="Wrap" Text="В данном случае уже все выбрано, просто нажми Загрузить." VerticalAlignment="Top" Width="272" Foreground="#FFAA7070"/>
+
+    </Grid>
+</Window>
